@@ -12,6 +12,12 @@
 */
 use App\manage;
 
+Route::get('/blade', function () {
+
+    return view('demo');
+
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -95,7 +101,7 @@ Route::group(['prefix'=>'admin'], function() {
     });
 
     Route::group(['prefix' => 'diennuoc'], function() {
-        
+
         Route::get('/hoadondiennuoc/{id}', 'DienNuocController@hoadondiennuoc');
 
         Route::get('/', 'DienNuocController@danhsachdiennuoc');
@@ -173,7 +179,7 @@ Route::group(['prefix'=>'admin'], function() {
 
         Route::get('/nguoithansinhvien', 'StudentController@relative');
 
-        // admin/relative/sinhvien => lấy danh sách 
+        // admin/relative/sinhvien => lấy danh sách
         // admin/students/nguoithansinhvien/{id} => để lấy thông tin của người thân đó
         Route::get('/sinhvien', 'StudentController@students');
 
